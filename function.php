@@ -10,3 +10,13 @@ function mason_script() {
     wp_enqueue_script( 'jquery-masonry' );
 }
 add_action( 'wp_enqueue_scripts', 'mason_script' );
+
+// Register wp_nav_menu() .
+		
+	register_nav_menus( array(
+	'mainmenu' => __( 'Main Menu' ),
+	'footermenu' => __( 'Footer Menu' ),
+) );
+
+//header.php page call nav menu
+<?php wp_nav_menu(array('theme_location' => 'mainmenu', 'menu_id' => 'nav',''));?>
